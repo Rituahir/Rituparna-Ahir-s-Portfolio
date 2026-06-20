@@ -22,54 +22,52 @@
         font-family: "Poppins", sans-serif;
       }
 
-      nav{
+      nav {
         display: flex;
         justify-content: space-around;
         align-items: center;
         height: 88px;
         background-color: rgb(14, 14, 61);
       }
-      nav ul{
+      nav ul {
         display: flex;
-       justify-content: center; 
+        justify-content: center;
       }
 
-      nav ul li{
-        list-style:none;
-        margin: 0 23px ;
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
       }
 
       nav ul li a {
         text-decoration: none;
         color: white;
       }
-       nav ul li a:hover{
-       color: rgb(51, 51, 97);
-       font-size: 1.02rem;
-       }
-      .left{
+      nav ul li a:hover {
+        color: rgb(51, 51, 97);
+        font-size: 1.02rem;
+      }
+      .left {
         font-size: 1.5rem;
       }
-      .firstsection{
+      .firstsection {
         display: flex;
         justify-content: space-around;
         margin: 23px 0;
       }
-        .firstsection > div{
-      width: 30% ;
-       margin:80px 0;
-       align-items: center;
+      .firstsection > div {
+        margin: 80px 0;
+        align-items: center;
       }
-      .leftsection{
+      .leftsection {
         font-size: 2rem;
-    
       }
-      .rightsection img{
-         width: 70%;
-         height: auto;
+      .rightsection img {
+        width: 70%;
+        height: auto;
       }
-      .blue{
-        color:rgb(112, 197, 217);
+      .blue {
+        color: rgb(112, 197, 217);
       }
     </style>
   </head>
@@ -82,47 +80,48 @@
           <span></span>
           <span></span>
         </div>
-        <div class="right" id="navMenu">
-            <ul>
-              <li><a href = "index.html" class="active">Home</a></li>
-              <li><a href = "about.html">About</a></li>
-              <li><a href = "internships.html">Internships</a></li>
-              <li><a href = "projects.html">Projects</a></li>
-              <li><a href = "contact.html">Contact Me</a></li>
-            </ul>
+        <div  style="z-index:60;"class="right" id="navMenu">
+          <ul>
+            <li><a href="index.html"  class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+          </ul>
         </div>
       </nav>
     </header>
 
     <main>
-        <section class="firstsection" >
-            <div class="leftsection">
-              <p>Hello, My name is <span class ="blue">Ritu</span> and I am an ambitious Software Developer.</p>
-            </div>
-            <div class="rightsection" style="margin-top: 0px;" >
-              <img src="Images/image9.png" alt="Ritu" />
-             
-            </div>
-
-        </section>
+      <section class="firstsection">
+        <div class="leftsection">
+          <p>
+            Hello, My name is <span class="blue">Ritu</span> and I am an
+            ambitious Software Developer.
+          </p>
+        </div>
+        <div class="rightsection" style="margin-top: 0px">
+          <img style="z-index: 50" src="Images/image9.png" alt="Ritu" />
+        </div>
+      </section>
     </main>
 
     <script>
       // Hamburger Menu Toggle
-      const hamburger = document.getElementById('hamburger');
-      const navMenu = document.getElementById('navMenu');
-      
-      hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+      const hamburger = document.getElementById("hamburger");
+      const navMenu = document.getElementById("navMenu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
       });
 
       // Close menu when a link is clicked
-      const navLinks = navMenu.querySelectorAll('a');
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          hamburger.classList.remove('active');
-          navMenu.classList.remove('active');
+      const navLinks = navMenu.querySelectorAll("a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
         });
       });
     </script>
