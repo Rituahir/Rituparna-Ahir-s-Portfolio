@@ -162,6 +162,134 @@
         background-color: rgb(112, 197, 217);
         color: rgb(14, 14, 61);
       }
+
+      /* --- NAV HAMBURGER STYLES --- */
+      .hamburger {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        z-index: 103;
+      }
+
+      .hamburger span {
+        width: 25px;
+        height: 3px;
+        background-color: white;
+        margin: 5px 0;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(10px, 10px);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+
+      /* --- MOBILE RESPONSIVE --- */
+      @media screen and (max-width: 850px) {
+        nav {
+          padding: 15px;
+          justify-content: space-between;
+        }
+
+        .hamburger {
+          display: flex;
+        }
+
+        .right {
+          position: fixed;
+          left: 0;
+          top: 70px;
+          flex-direction: column;
+          background-color: rgb(14, 14, 61);
+          width: 100%;
+          text-align: center;
+          transition: all 0.3s ease;
+          max-height: 0;
+          overflow: hidden;
+          padding: 0;
+          z-index: 100;
+        }
+
+        .right.active {
+          max-height: 500px;
+          padding: 20px 0;
+        }
+
+        .right ul {
+          flex-direction: column;
+          gap: 0;
+          width: 100%;
+        }
+
+        .right ul li {
+          width: 100%;
+          padding: 15px 0;
+          border-bottom: 1px solid rgba(112, 197, 217, 0.1);
+        }
+
+        .right ul li a {
+          display: block;
+          width: 100%;
+        }
+
+        .contact-container {
+          margin: 20px auto;
+          padding: 0 15px;
+        }
+
+        .contact-container h1 {
+          font-size: 2rem;
+        }
+
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+
+        .contact-card {
+          padding: 25px 15px;
+        }
+
+        .contact-card h3 {
+          font-size: 1.1rem;
+        }
+
+        .contact-card p {
+          font-size: 0.85rem;
+        }
+      }
+
+      @media screen and (max-width: 600px) {
+        nav {
+          padding: 12px;
+          min-height: 70px;
+        }
+
+        .left {
+          font-size: 1rem;
+        }
+
+        .contact-container h1 {
+          font-size: 1.5rem;
+        }
+
+        .contact-card {
+          padding: 20px 10px;
+        }
+
+        .icon-wrapper {
+          width: 50px;
+          height: 50px;
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -169,7 +297,12 @@
     <header>
       <nav>
         <div class="left">Ritu's Portfolio</div>
-        <div class="right">
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="right" id="navMenu">
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
@@ -226,5 +359,24 @@
       </div>
     </main>
 
+    <script>
+      // Hamburger Menu Toggle
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('navMenu');
+      
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close menu when a link is clicked
+      const navLinks = navMenu.querySelectorAll('a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          hamburger.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+    </script>
   </body>
 </html>

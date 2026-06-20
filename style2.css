@@ -17,25 +17,69 @@ body {
 /* --- Navigation Bar (Shared across pages) --- */
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  height: 88px;
+  min-height: 80px;
+  padding: 0 10%;
   background-color: rgb(14, 14, 61);
+  position: relative;
+}
+
+.left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  z-index: 102;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 103;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
 }
 
 nav ul {
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
 nav ul li {
   list-style: none;
-  margin: 0 23px;
 }
 
 nav ul li a {
   text-decoration: none;
   color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover,
@@ -43,10 +87,6 @@ nav ul li a.active {
   color: rgb(112, 197, 217);
   font-size: 1.02rem;
   transition: all 0.2s ease;
-}
-
-.left {
-  font-size: 1.5rem;
 }
 
 /* --- Home Page Specific Layout --- */
@@ -165,4 +205,110 @@ details[open] summary {
 
 .internship-details ul li {
   margin-bottom: 8px;
+}
+
+/* --- Mobile Responsive Styles --- */
+@media screen and (max-width: 850px) {
+  nav {
+    padding: 15px;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .right {
+    position: fixed;
+    left: 0;
+    top: 70px;
+    flex-direction: column;
+    background-color: rgb(14, 14, 61);
+    width: 100%;
+    text-align: center;
+    transition: all 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0;
+    z-index: 100;
+  }
+
+  .right.active {
+    max-height: 500px;
+    padding: 20px 0;
+  }
+
+  .right ul {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .right ul li {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(112, 197, 217, 0.1);
+  }
+
+  .right ul li a {
+    display: block;
+    width: 100%;
+  }
+
+  .internship-container {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  summary {
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .internship-details {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    padding: 12px;
+    min-height: 70px;
+  }
+
+  .left {
+    font-size: 1rem;
+  }
+
+  .internship-container {
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  summary {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+
+  .internship-details h3 {
+    font-size: 1rem;
+  }
+
+  .duration {
+    font-size: 0.8rem;
+  }
+
+  .internship-details ul {
+    margin-left: 15px;
+    font-size: 0.9rem;
+  }
 }
