@@ -1,0 +1,168 @@
+/* --- Global Resets & Body for internship css code --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(39, 39, 85);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- Navigation Bar (Shared across pages) --- */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 88px;
+  background-color: rgb(14, 14, 61);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 23px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: rgb(112, 197, 217);
+  font-size: 1.02rem;
+  transition: all 0.2s ease;
+}
+
+.left {
+  font-size: 1.5rem;
+}
+
+/* --- Home Page Specific Layout --- */
+.firstsection {
+  display: flex;
+  justify-content: space-around;
+  margin: 23px 0;
+}
+
+.firstsection > div {
+  width: 30%;
+  margin: 80px 0;
+  align-items: center;
+}
+
+.leftsection {
+  font-size: 2rem;
+}
+
+.rightsection img {
+  width: 70%;
+  height: auto;
+}
+
+/* --- Internships Page Layout --- */
+.internship-container {
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.blue {
+  color: rgb(112, 197, 217);
+}
+
+/* --- Column Accordion Layout --- */
+.internship-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+details {
+  background-color: rgb(24, 24, 56);
+  border: 1px solid rgba(112, 197, 217, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease;
+}
+
+details:hover {
+  transform: translateY(-2px);
+  border-color: rgb(112, 197, 217);
+}
+
+/* --- Tap Target Header --- */
+summary {
+  padding: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+/* Custom interactive plus indicator */
+summary::after {
+  content: "＋";
+  color: rgb(112, 197, 217);
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+/* Changes plus to minus when expanded */
+details[open] summary::after {
+  content: "－";
+}
+
+details[open] summary {
+  border-bottom: 1px solid rgba(112, 197, 217, 0.2);
+  background-color: rgb(18, 18, 46);
+}
+
+/* --- Dropdown Panel Content --- */
+.internship-details {
+  padding: 20px;
+  background-color: rgb(29, 29, 69);
+  line-height: 1.6;
+}
+
+.internship-details h3 {
+  margin-bottom: 5px;
+  color: rgb(112, 197, 217);
+}
+
+.duration {
+  font-size: 0.9rem;
+  color: #b0b0d0;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.internship-details ul {
+  margin-left: 20px;
+}
+
+.internship-details ul li {
+  margin-bottom: 8px;
+}

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Me - RITU PORTFOLIO</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    />
+    
+    <style>
+      /* --- GLOBAL STYLES  --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(39, 39, 85);
+        color: white;
+        font-family: "Poppins", sans-serif;
+        min-height: 100vh;
+      }
+
+      /* --- NAV BAR STYLES --- */
+      nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 88px;
+        background-color: rgb(14, 14, 61);
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+      }
+      nav ul li {
+        list-style: none;
+        margin: 0 23px;
+      }
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+      nav ul li a:hover {
+        color: rgb(51, 51, 97);
+        font-size: 1.02rem;
+      }
+      nav ul li a.active {
+        color: rgb(112, 197, 217);
+        font-size: 1.02rem;
+      }
+      .left {
+        font-size: 1.5rem;
+      }
+      .blue {
+        color: rgb(112, 197, 217);
+      }
+
+      /* --- CONTACT LAYOUT STYLES --- */
+      .contact-container {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .contact-container h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .contact-subtitle {
+        color: #b0b0d0;
+        margin-bottom: 50px;
+        font-size: 1.1rem;
+      }
+
+      /* Grid Layout for Icons */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 30px;
+        width: 100%;
+      }
+
+      /* Contact Cards */
+      .contact-card {
+        background-color: rgb(24, 24, 56);
+        border: 1px solid rgba(112, 197, 217, 0.1);
+        border-radius: 12px;
+        padding: 35px 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .contact-card:hover {
+        transform: translateY(-5px);
+        border-color: rgb(112, 197, 217);
+        box-shadow: 0 10px 20px rgba(14, 14, 61, 0.5);
+      }
+
+      /* Circular Icon Wrappers */
+      .icon-wrapper {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(39, 39, 85);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        font-size: 1.8rem;
+        color: rgb(112, 197, 217);
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .contact-card:hover .icon-wrapper {
+        background-color: rgb(112, 197, 217);
+        color: rgb(14, 14, 61);
+      }
+
+      .contact-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+      }
+
+      .contact-card p {
+        font-size: 0.95rem;
+        color: #b0b0d0;
+        margin-bottom: 20px;
+        word-break: break-all;
+      }
+
+      /* Action Buttons */
+      .contact-btn {
+        display: inline-block;
+        padding: 8px 18px;
+        border: 1px solid rgb(112, 197, 217);
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: rgb(112, 197, 217);
+        font-weight: bold;
+        text-decoration: none;
+        background: transparent;
+        transition: all 0.2s ease;
+      }
+
+      .contact-card:hover .contact-btn {
+        background-color: rgb(112, 197, 217);
+        color: rgb(14, 14, 61);
+      }
+    </style>
+  </head>
+  <body>
+    
+    <header>
+      <nav>
+        <div class="left">Ritu's Portfolio</div>
+        <div class="right">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="contact.html" class="active">Contact Me</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="contact-container">
+      <h1>Contact <span class="blue">Me</span></h1>
+      <p class="contact-subtitle">Let's connect! Feel free to reach out through any of the channels below.</p>
+
+      <div class="contact-grid">
+        
+        <div class="contact-card">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h3>Phone</h3>
+          <p>+91 9366552586</p>
+          <a href="tel:(+91) 9366552586" class="contact-btn">Call Now</a>
+        </div>
+
+        <a href="https://www.linkedin.com/in/rituparna-ahir-22278728a" target="_blank" class="contact-card">
+          <div class="icon-wrapper">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </div>
+          <h3>Linkedin</h3>
+          <p>https://www.linkedin.com/in/rituparna-ahir-22278728a</p>
+          <span class="contact-btn">Let's Connect</span>
+        </a>
+
+        <a href="https://github.com/Rituahir" target="_blank" class="contact-card">
+          <div class="icon-wrapper">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <h3>GitHub</h3>
+          <p>https://github.com/Rituahir</p>
+          <span class="contact-btn">View Profile</span>
+        </a>
+
+        <div class="contact-card">
+          <div class="icon-wrapper">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h3>Address</h3>
+          <p>Tripura,  India</p>
+          <a href="https://maps.google.com" target="_blank" class="contact-btn">Find on Map</a>
+        </div>
+
+      </div>
+    </main>
+
+  </body>
+</html>

@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RITU - PORTFOLIO WEBSITE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: rgb(39, 39, 85);
+        color: white;
+        font-family: "Poppins", sans-serif;
+      }
+
+      nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 88px;
+        background-color: rgb(14, 14, 61);
+      }
+      nav ul{
+        display: flex;
+       justify-content: center; 
+      }
+
+      nav ul li{
+        list-style:none;
+        margin: 0 23px ;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+      }
+       nav ul li a:hover{
+       color: rgb(51, 51, 97);
+       font-size: 1.02rem;
+       }
+      .left{
+        font-size: 1.5rem;
+      }
+      .firstsection{
+        display: flex;
+        justify-content: space-around;
+        margin: 23px 0;
+      }
+        .firstsection > div{
+      width: 30% ;
+       margin:80px 0;
+       align-items: center;
+      }
+      .leftsection{
+        font-size: 2rem;
+    
+      }
+      .rightsection img{
+         width: 70%;
+         height: auto;
+      }
+      .blue{
+        color:rgb(112, 197, 217);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="left">Ritu's Portfolio</div>
+        <div class="right">
+            <ul>
+              <li><a href = "index.html" class="active">Home</a></li>
+              <li><a href = "about.html">About</a></li>
+              <li><a href = "internships.html">Internships</a></li>
+              <li><a href = "projects.html">Projects</a></li>
+              <li><a href = "contact.html">Contact Me</a></li>
+            </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+        <section class="firstsection" >
+            <div class="leftsection">
+              Hello, My name is <span class ="blue" >Ritu</span> 
+              <div> and i am an </div>
+              <div> ambitious </div>
+              <div>Software Developer</div>
+            </div>
+            <div class="rightsection" style="margin-top: 0px;" >
+              <img src="Images/image9.png" alt="Ritu" />
+             
+            </div>
+
+        </section>
+    </main>
+  </body>
+</html>

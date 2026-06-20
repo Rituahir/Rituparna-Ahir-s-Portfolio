@@ -1,0 +1,192 @@
+/* this is for index.html */
+:root {
+  --bg-main: rgb(39, 39, 85);
+  --bg-nav: rgb(14, 14, 61);
+  --text-light: #ffffff;
+  --text-dim: #b0b0e0;
+  --accent-blue: rgb(0, 191, 255); /* Vibrant accent for links/highlights */
+  --accent-purple: rgb(123, 126, 219);
+  --transition-smooth: all 0.3s ease-in-out;
+}
+
+/* --- Global Resets --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Prevents padding from breaking layout widths */
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-light);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden; /* Prevents accidental horizontal scrolling */
+}
+
+/*  Navigation Bar  */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 80px;
+  padding: 0 10%;
+  background-color: var(--bg-nav);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.left {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--text-light);
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* Modern dynamic spacing instead of fixed margins */
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--text-dim);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+nav ul li a.active {
+  color: var(--accent-blue);
+}
+
+/* Dynamic Hover Underline Effect */
+nav ul li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: var(--accent-blue);
+  transition: var(--transition-smooth);
+}
+
+nav ul li a:hover {
+  color: var(--text-light);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section  */
+.firstsection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Dynamically scales to fill remaining screen height */
+  padding: 0 10%;
+  gap: 50px;
+}
+
+.leftsection {
+  flex: 1; /* Automatically scales space available */
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* about.html code css start from here */
+
+.about-page .leftsection {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.about-page .leftsection h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.leftsection div {
+  margin-top: 5px;
+}
+
+.rightsection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dynamic Scaling Image with Subtle Float Animation */
+.rightsection img {
+  width:66%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.5));
+  animation: float 4s ease-in-out infinite;
+}
+
+.blue {
+  color: var(--accent-blue);
+  text-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+/* Floating Animation Concept */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* --- Media Queries (Dynamic Mobile Responsiveness) --- */
+@media screen and (max-width: 850px) {
+  nav {
+    flex-direction: column;
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  nav ul {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .firstsection {
+    flex-direction: column-reverse; /* Puts image on top for smaller mobile screens */
+    justify-content: center;
+    text-align: center;
+    padding: 40px 5%;
+    gap: 30px;
+  }
+
+  .leftsection {
+    font-size: 1.8rem;
+  }
+
+  .rightsection img {
+    width: 60%;
+  }
+}
+.rightsection {
+margin-top: 20px;
+}
+.leftsection {
+    font-family: math;
+    font-size: 35px;
+}
+
+/* style for internships.html */
+
+ 

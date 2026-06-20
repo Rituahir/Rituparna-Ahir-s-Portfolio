@@ -1,0 +1,183 @@
+/* --- Global Resets & Body Layout --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(39, 39, 85);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+/* --- Navigation Framework --- */
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 88px;
+  background-color: rgb(14, 14, 61);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 0 23px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover, 
+nav ul li a.active {
+  color: rgb(112, 197, 217);
+  font-size: 1.02rem;
+}
+
+.left {
+  font-size: 1.5rem;
+}
+
+.blue {
+  color: rgb(112, 197, 217);
+}
+
+/* --- Projects Module Container --- */
+.projects-container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.projects-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+}
+
+/* --- Expanding Project Card Structure --- */
+details {
+  width: 100%;
+  max-width: 600px;
+  background-color: rgb(24, 24, 56);
+  border: 2px solid rgba(112, 197, 217, 0.2);
+  border-radius: 50px; /* Aligns with the circular design when closed */
+  overflow: hidden;
+  transition: border-radius 0.3s ease, border-color 0.2s ease;
+}
+
+details[open] {
+  border-radius: 20px;
+  border-color: rgb(112, 197, 217);
+}
+
+/* --- Interactive Tap Bar Header --- */
+summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 10px 25px 10px 10px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+summary::-webkit-details-marker {
+  display: none; /* Hides default small browser triangles */
+}
+
+/* --- The Circular Number Badge --- */
+.circle-badge {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(39, 39, 85);
+  border: 2px solid rgb(112, 197, 217);
+  color: rgb(112, 197, 217);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-right: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+summary::after {
+  content: "▼";
+  font-size: 0.8rem;
+  color: rgb(112, 197, 217);
+  margin-left: auto;
+  transition: transform 0.3s ease;
+}
+
+/* --- Opened Active State Mutations --- */
+details[open] summary::after {
+  transform: rotate(-180deg);
+}
+
+details[open] .circle-badge {
+  background-color: rgb(112, 197, 217);
+  color: rgb(24, 24, 56);
+  transform: scale(1.05);
+}
+
+/* --- Inside Content Area Styles --- */
+.project-content {
+  padding: 25px;
+  background-color: rgb(29, 29, 69);
+  text-align: left;
+  line-height: 1.6;
+  border-top: 1px solid rgba(112, 197, 217, 0.2);
+}
+
+.project-content p {
+  margin-bottom: 15px;
+  color: #e0e0ff;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.tag {
+  background-color: rgba(112, 197, 217, 0.15);
+  color: rgb(112, 197, 217);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+}
+
+.project-link {
+  display: inline-block;
+  color: rgb(112, 197, 217);
+  text-decoration: none;
+  font-weight: bold;
+  border-bottom: 1px dashed rgb(112, 197, 217);
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: white;
+  border-bottom-style: solid;
+}
